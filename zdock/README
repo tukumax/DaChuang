@@ -1,0 +1,38 @@
+				ZDOCK 3.0.1
+
+This is the README file for release 3.0.1 of ZDOCK program. ZDOCK is an
+initial stage protein-protein docking program, developed initially by
+Rong Chen and Zhiping Weng in 2002. It optimizes pairwise shape 
+complementarity, an interface contact potential called IFACE, and 
+electrostatic energies using the Fast Fourier Transform algorithm. The 
+FFT is optimized for speed and memory usage using the Conv3D library. If
+you use ZDOCK 3.0.1 for your work, please cite:
+"Mintseris J, Pierce B, Wiehe K, Anderson R, Chen R, and Weng Z.  
+Integrating Statistical Pair Potentials into Protein Complex Prediction.  
+Proteins (in press)".
+and
+"Pierce B, Hourai Y, Weng Z (Submitted).  ZDOCK 2.3.1 and ZDOCK 3.0.1: 
+Using a New 3D Convolution Library to Enhance Docking Efficiency"
+
+This distribution includes an executable file (zdock) of the ZDOCK program,
+PDB processing file (mark_sur, uniCHARMM, block.pl), and auxiliary files
+(create.pl, create_lig) to create predicted complex structures from a ZDOCK
+output.
+
+Example:
+mark_sur PDB new_PDB
+zdock -R receptor.pdb -L ligand.pdb -o zdock.out
+create.pl zdock.out
+
+Attention: receptor.pdb, ligand.pdb and create_lig must be in your current
+directory when you try to create all predicted structures using create.pl.
+
+Standard PDB format files must be processed by mark_sur before used as the
+input of ZDOCK. Formatted PDB files of docking benchmark can be downloaded at
+http://zlab.bu.edu/zdock/benchmark.shtml. If you know that some atoms
+are not in the binding site, you can block them by changing their ACE type
+(column 55-56) to 19. This blocking procedure can improve docking
+performance significantly. A blocking script block.pl is included, type
+"block.pl" for usage information.
+
+More options can be found by typing "zdock".

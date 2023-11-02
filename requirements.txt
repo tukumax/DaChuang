@@ -1,0 +1,7 @@
+# python==3.6.6
+Bio==1.5.2
+Requests==2.27.1
+wget==3.2
+pyinstaller==4.10
+numpy==1.19.5
+pyqt5-tools==5.15.4.3.2
